@@ -5,8 +5,7 @@
 ## 사용방법
 - git으로 파일을 가져오거나, sh파일 코드를 복사 붙여넣기 해서 sh파일 생성
 ```sh
-git clone [url]
-
+git clone https://github.com/WoogiBoogi1129/Other-Resources.git
 # 또는 그대로 복사해서 Local에 sh파일로 생성해도 됨.
 vi [file name].sh
 ## 이후 코드 복사해서 저장
@@ -14,10 +13,10 @@ vi [file name].sh
 
 - sh파일 권한 부여
 ```sh
-chmod +x k8s_auto_install.sh
+chmod +x Other-Resources/Kubernetes_Auto_Installer/k8s_auto_install.sh
 ```
 
 - sh 파일 실행
 ```sh
-sudo ./k8s_auto_install.sh
+sudo ./Other-Resources/Kubernetes_Auto_Installer/k8s_auto_install.sh
 ```
