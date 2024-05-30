@@ -14,10 +14,10 @@ vi [file name].sh
 
 - sh파일 권한 부여
 ```sh
-chmod +x kubernetes_auto_installer.sh
+chmod +x k8s_auto_install.sh
 ```
 
 - sh 파일 실행
 ```sh
-sudo ./kubernetes_auto_installer.sh
+sudo ./k8s_auto_install.sh
 ```
