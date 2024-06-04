@@ -14,8 +14,8 @@ sudo sysctl --system
 #3. Docker Install
 echo "Docker Install..."
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-sudo apt-get update
-sudo apt-get install ca-certificates curl
+sudo apt-get update -y
+sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -24,13 +24,13 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt-get update -y
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 #4. Kubernetes 설치
 echo "Kubernetes Install..."
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
 mkdir /etc/apt/keyrings
@@ -40,14 +40,14 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 #5. kubeadm, kubelet, kubectl Install
 echo "Kubeadm, Kubelet, Kubectl Install..."
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 sudo systemctl enable --now kubelet
 
 #6. Containerd Install
 echo "Containerd Install..."
-sudo apt-get install containerd.io
+sudo apt-get install -y containerd.io
 
 #7. CGroup Configure
 echo "Cgroup Configuring..."
